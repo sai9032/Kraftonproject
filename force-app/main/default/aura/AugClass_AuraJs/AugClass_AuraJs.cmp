@@ -1,0 +1,43 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	<aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <div/>
+    <aura:attribute name="staff"  type="String" default="sai"/>
+    <aura:attribute name="Salary" type="integer" default="580000"/>
+    <aura:attribute name="Isdevstarted" type="Boolean" default="true"/>
+    <aura:attribute name="DOB" type="Date"   default="2021-08-18"/>
+    <aura:attribute name="lastModifiedDate"  type="DateTime" />
+    <aura:attribute name="stdlist" type="list" default="['sai','charan','surya']"/>
+    <aura:attribute name="RollNumbers" type="list" default="[10000,20000,30000,4000,5000,600,700,800,9000,100000]"/>
+
+    <div/>
+    
+       <table border="2">
+           <tr> 
+               <td> Name </td>
+           </tr> 
+           <aura:iteration items="{!v.stdlist}" var="ii">
+           <tr>
+            {!ii}
+           </tr>
+           </aura:iteration>
+       </table>
+    <div/>
+
+
+
+            {!v.staff} <br/>
+            {!v.Salary} <br/>
+            {!v.Isdevstarted} <br/>
+            {!v.DOB} <br/>
+    {!v.lastModifiedDate} <br/>
+    <aura:iteration items="{!v.stdlist}" var="s"> 
+        {!s}<br/>
+     </aura:iteration>
+    <div/>    
+   
+    <lightning:avatar src="https://b.zmtcdn.com/web_assets/b40b97e677bc7b2ca77c58c61db266fe1603954218.png" size="large"  alternativeText="Bob Wilson"/>  <br/>
+    
+    <lightning:badge label="Label"/>
+    <lightning:badge label="Start Position" iconName="utility:arrowup"/>
+    <lightning:badge label="Start Position" iconName="utility:arrowdown" iconPosition="end"/>
+</aura:component>

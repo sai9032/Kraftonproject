@@ -1,0 +1,21 @@
+.THIS .maindiv{
+    color:red;
+    background-color:white;
+   padding:15px;
+   margin:25px;
+    
+}
+
+.THIS .Newpara{
+     
+
+
+
+}
+@media only screen and (max-device-width: 667px) {
+  .THIS .maindiv{
+    color:Pink;
+     background:yellow;
+    }
+
+}

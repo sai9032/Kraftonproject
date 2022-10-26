@@ -1,0 +1,29 @@
+<aura:component controller="ContactListController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>  
+    
+    <aura:attribute name="clist" type="contact[]" default=""/> 
+    
+    <lightning:button class="slds-align_absolute-center main-btn" onclick="{!c.updateRecords}" variant="brand" label="Update" title="Base action" />
+    
+    <table border="2">  
+        <thead>  
+            <tr> 
+                
+                <th>ID </th>
+                <th> Name</th>
+            </tr>
+        </thead>
+        <tbody>  
+            <aura:iteration items="{!v.clist}" var="s"> 
+                <tr>        
+                    
+                    
+                    <td>{!s.Id}</td> 
+                    <td><lightning:input  name="Name" label="" value="{!s.Name}" /></td>
+                    
+                </tr>
+            </aura:iteration> 
+        </tbody>
+        
+    </table>
+</aura:component>

@@ -1,0 +1,16 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickAction" access="global" >
+              <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>  
+  
+    
+    
+    
+
+    
+    <lightning:button variant="success" label="Success"  /> 
+    <lightning:button label="Neutral" title="Neutral action" /> 
+    <lightning:button variant="inverse" label="inverse"  />  
+    
+    <lightning:button variant="destructive-tex" label="destructive-tex"/>
+    <lightning:button   variant="destructive" label="destructive"/>
+       
+</aura:component>

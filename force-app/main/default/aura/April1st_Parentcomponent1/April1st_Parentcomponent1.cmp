@@ -1,0 +1,20 @@
+<aura:component controller="April1st_class" 
+                implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId"  
+                access="global" > 
+    <aura:attribute name="searchKeyword" type="string" default=""/>   
+    
+    <aura:attribute name="finalstdlist" type="Student__c[]" default=""/>
+    
+    <div onkeyup="{! c.handleKeyUp }" class="sbox">
+        <lightning:input
+                         aura:id="enter-search"
+                         name="enter-search"
+                         label="Search students"
+                         type="search" 
+                         value="{!v.searchKeyword}"               
+                         />
+    </div>
+    
+    <c:April1st_Childcomponent1 stdlist="{!v.finalstdlist}"/>
+    
+</aura:component>

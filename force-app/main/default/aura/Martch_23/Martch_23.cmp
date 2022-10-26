@@ -1,0 +1,33 @@
+<aura:component  controller="Martch_23_Apex_Class" 
+                 implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" 
+                 access="global" >
+	             
+<aura:handler name="init" value="{!this}" action="{!c.doInit}"/> 
+    
+    <aura:attribute name="studentlist" type="Student__c[]" default=""/>  
+    <lightning:button  class="slds-align_absolute-center mainbtn" variant="Brand" label="Update" title="Base action" onclick="{! c.UpdateRecord }"/>
+    
+    <table class="slds-table" border="2">  
+        <thead>  
+            <tr>
+                <th>ID </th>
+                <th> Name</th>
+                <th> Email Id </th> 
+                <th> Gender </th> 
+            </tr>
+        </thead>
+        <tbody>  
+            <aura:iteration items="{!v.studentlist}" var="s"> 
+                <tr>        
+                    
+                    
+                    <td>{!s.Id}</td> 
+                    <td><lightning:input name="Name" label="" value="{!s.Name}"/></td>
+                    <td><lightning:input name="Email" label="" value="{!s.Email_Id__c}"/></td> 
+                    <td><lightning:input name="Gender" label="" value="{!s.Gender__c}"/></td>
+                </tr>
+            </aura:iteration> 
+        </tbody>
+        
+    </table>
+</aura:component>

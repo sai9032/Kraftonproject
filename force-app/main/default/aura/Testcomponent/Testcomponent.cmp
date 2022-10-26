@@ -1,0 +1,32 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+   
+        <head></head>
+            <body>
+                <table border='2'>
+                  <tr> 
+                     <th>First Name</th>
+                     <th>Last Name</th>
+                     <th>Email Id</th>
+					 <th>Company</th>
+					 <th>Job Title</th>
+					 <th>Id Number</th>
+                    </tr>
+                    <td>sai</td>
+                    <td>charan</td>  
+                     <td>saicharan9032@gmail.com</td>
+                    <td>Kraftan</td>
+                    <td>Salesforce Developer</td>
+                    <td>AB020</td> 
+</table>     
+                <h1><b>Quarterly Performance</b></h1><br></br>
+                 CLOSED₹0   OPEN (>70%)₹0         GOAL
+
+                <a href="https://www.eventdex.com" target="_blank">Click here</a>
+
+                <input type="radio" id="male" name="gender" value="Male"></input>
+              <label for="male">Male</label>
+
+ </body>
+    <img src="https://homepages.cae.wisc.edu/~ece533/images/airplane.png"></img>
+    
+</aura:component>

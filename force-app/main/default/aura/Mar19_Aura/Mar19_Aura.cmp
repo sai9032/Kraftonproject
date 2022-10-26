@@ -1,0 +1,51 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+
+    
+    <lightning:input label="First Name:" class="stdform" placeholder="Enter Your First Name" required="true" maxlength="10"/> 
+    <lightning:input label="Second Name:" class="stdform" placeholder="Enter Your Second Name" required="true" maxlength="10"/>
+    <lightning:input label="emailid:" class="stdform" placeholder="Enter Your Second Name" required="true" maxlength="10"/> 
+    <lightning:input label="DOD" type="date" class="stdform" value=""/> 
+    <lightning:input label="Tel" type="tel" class="stdform" placeholder="Enter Your Tel Number"/>
+    <lightning:input type="password" class="stdform" label="Enter Your Password" placeholder="Enter Password"/> 
+    <lightning:input type="password" class="stdform" label="confirm Password" placeholder="confirm Password"/> 
+    <br></br>
+    <lightning:button class="margin-left:50px" label="Save" iconPosition="left"/> 
+    
+     <br></br>  
+    
+      <aura:attribute  name="UserName" type="String" default="Sai Charan" />  
+      <aura:attribute name="idfeepaid"  type="Boolean" default="true"/> 
+    <aura:attribute name="StartDate" type="Date" default="2021-03-20"/>
+    <aura:attribute name="ToatlPrice" type="Decimal"  default="45222.00"/>             
+    <aura:attribute name="EmployeeList" type="List" default="['uday','kiran','Surya','Shravan']"/> 
+    
+
+    <div>   
+    <table>  
+        <tr>
+            <th>S.No</th>
+        </tr>
+        </table>
+    
+    </div>
+
+       <div> 
+           <aura:iteration items="{!v.EmployeeList}" var="s">
+               {!s}<br/>
+           
+           </aura:iteration>
+           
+       </div> 
+    
+    
+        
+        <div>
+        
+        {!v.UserName} <br/>
+        
+        {!v.idfeepaid}<br/>          
+        {!v.StartDate}<br/> 
+        {!v.ToatlPrice}<br/>
+        
+    </div>
+</aura:component>

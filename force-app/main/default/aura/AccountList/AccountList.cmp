@@ -1,0 +1,29 @@
+<aura:component Controller="AccountListController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+	<aura:handler name="init" value="{!this}" action="{!c.doInit}" /> 
+    
+    <aura:attribute name="aclist"  type="Account[]" default=""/>  
+    
+    
+         <table class="slds=table" border="3"> 
+             <thead>  
+                 <th>ID </th> 
+                 <th>Name </th>  
+                 <th> Rating</th> 
+                 <th> Type </th> 
+             </thead>
+             
+             <tbody>  
+        <aura:iteration items="{!v.aclist}" var="s"> 
+            <tr>
+                 <td>{!s.Id}</td> 
+                 <td>{!s.Name}</td> 
+                 <td>{!s.Rating}</td>
+                   <td>{!s.Type}}</td>  
+            </tr>
+     </aura:iteration>
+             </tbody>
+         </table>
+   
+    
+    
+</aura:component>

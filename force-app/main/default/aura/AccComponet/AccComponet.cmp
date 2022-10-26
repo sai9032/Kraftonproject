@@ -1,0 +1,51 @@
+<aura:component controller="ActList" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" access="global" >
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+    <aura:attribute name="acclist" type="account[]" default="" />
+
+           	
+           <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_col-bordered" style="width:3.25rem" > 
+               
+                 <thead>
+                     <tr class="slds-line-height_reset"> 
+                     
+                         <th>Id</th>
+                         <th>Name</th>
+                         <th>Site</th>
+                         <th>Type</th>
+  
+                     
+                     </tr> 
+
+                    </thead>
+               
+               <tbody>
+               <aura:iteration  items="{!v.acclist}" var="s">
+                   <tr>
+                   
+                       <td>{!s.Id}</td>
+                       <td>{!s.Name}</td>
+                       <td>{!s.Site}</td>
+                       <td>{!s.Type}</td>
+                   
+                   
+                  
+                   
+                   </tr>
+               
+                   </aura:iteration>               
+               
+               </tbody>
+
+
+
+         </table>
+    
+    
+    
+    
+    
+    
+
+
+</aura:component>

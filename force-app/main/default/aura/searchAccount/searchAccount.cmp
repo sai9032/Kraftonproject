@@ -1,0 +1,127 @@
+<aura:component controller="searchAccountController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	 
+    
+    <!-- CREATE ATTRIBUTE/VARIABLE-->
+    <aura:attribute name="searchResult" type="List" description="use for store and display account list return from server"/>
+    <aura:attribute name="searchKeyword" type="String" description="use for store user search input"/>
+    <aura:attribute name="Message" type="boolean" default="false" description="use for display no record found message"/>
+    <aura:attribute name="TotalNumberOfRecord" type="integer" default="0" description="use for display Number of records"/>
+    <lightning:card >
+    <!-- SHOW LOADING SPINNER--> 
+    <lightning:spinner variant="brand" size="large" aura:id="Id_spinner" class="slds-hide" />
+    
+    <div class="slds-m-around_medium">
+       <!-- SEARCH INPUT AND SEARCH BUTTON-->  
+        <lightning:layout>
+            <lightning:layoutItem size="3" padding="around-small">
+                <lightning:input value="{!v.searchKeyword}"
+                                 required="true"
+                                 placeholder="search Accounts.."
+                                 aura:id="searchField"
+                                 label="Account Name"/>
+            </lightning:layoutItem>
+            <lightning:layoutItem size="2" padding="around-small">
+                <lightning:button class="cl1" onclick="{!c.Search}"
+                                  variant="brand"
+                                  label="Search"
+                                  iconName="utility:search"/> 
+            </lightning:layoutItem>
+        </lightning:layout>
+       
+        <!-- TOTAL RECORDS BADGES--> 
+        <div class="slds-m-around_x-small"> 
+            <lightning:badge label="{!v.TotalNumberOfRecord}" />
+        </div>
+        
+        <!-- ERROR MESSAGE IF NOT RECORDS FOUND--> 
+        <aura:if isTrue="{!v.Message}">
+            <div class="slds-notify_container slds-is-relative">
+                <div class="slds-notify slds-notify_toast slds-theme_error" role="alert">
+                    <div class="slds-notify__content">
+                        <h2 class="slds-text-heading_small">No Records Found...</h2>
+                    </div>
+                </div>
+            </div>
+        </aura:if>
+       
+        <!-- TABLE CONTENT--> 
+        <table class="slds-table slds-table_bordered slds-table_cell-buffer">
+            <thead>
+                <tr class="slds-text-title_caps">
+                    <th scope="col"> 
+                        <div class="slds-truncate" title="S.no">S.no</div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="Account Name">Account Name</div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="Type">Type</div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="Industry">Industry</div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="Phone">Phone</div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="Fax">Fax</div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="Rating">Rating</div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="Website">Website</div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="CurrencyIsoCode">Currency</div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="AnnualRevenue">Annual Revenue</div>
+                    </th>
+
+                </tr>
+            </thead>
+            <tbody> 
+                <!--### display all records of searchResult attribute by aura:iteration ###-->
+                <aura:iteration items="{!v.searchResult}" var="acc" indexVar="count">
+                    <tr>
+                        <td>
+                            <div class="slds-truncate">{!count + 1}</div>
+                        </td>
+                        <td>
+                            <div class="slds-truncate">{!acc.Name}</div>
+                        </td>
+                        <td>
+                            <div class="slds-truncate">{!acc.Type}</div>
+                        </td>
+                        <td>
+                            <div class="slds-truncate">{!acc.Industry}</div>
+                        </td>
+                        <td>
+                            <div class="slds-truncate">{!acc.Phone}</div>
+                        </td>
+                        <td>
+                            <div class="slds-truncate">{!acc.Fax}</div>
+                        </td>
+                        <td>
+                            <div class="slds-truncate">{!acc.Rating}</div>
+                        </td>
+                        <td>
+                            <div class="slds-truncate">{!acc.Website}</div>
+                        </td>
+                        <td>
+                            <div class="slds-truncate">{!acc.CurrencyIsoCode}</div>
+                        </td>  
+                        <td>
+                            <div class="slds-truncate">{!acc.AnnualRevenue}</div>
+                        </td> 
+                        
+                    </tr>
+                </aura:iteration>
+            </tbody>
+        </table>
+    </div>
+    </lightning:card >
+</aura:component>
+
+<!--  https://mcas-proxyweb.mcas.ms/certificate-checker?login=false&originalUrl=https%3A%2F%2Fapc01.safelinks.protection.outlook.com.mcas.ms%2Fap%2Ft-59584e83%2F%3Furl%3Dhttps%253A%252F%252Fteams.microsoft.com%252Fl%252Fmeetup-join%252F19%25253ameeting_MTQ3ODJkNGEtMGFhZi00Yjc1LTg1ZDctOGIzNDViYzBmMGFi%252540thread.v2%252F0%253Fcontext%253D%25257b%252522Tid%252522%25253a%2525220d85160c-5899-44ca-acc8-db1501b993b6%252522%25252c%252522Oid%252522%25253a%252522b28e6a13-f15d-4aae-bc59-584ed93bc1f4%252522%25257d%26data%3D04%257C01%257Cbsaicharan%2540virtusa.com%257Ccd0efd03a34942e09e5508d9fa7a211d%257C0d85160c589944caacc8db1501b993b6%257C0%257C0%257C637816224725798872%257CUnknown%257CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%253D%257C3000%26sdata%3DjYb%252FcoJMppVsiUIcndwF2MVYUpPyMVvnKeuqJAw6Nik%253D%26reserved%3D0%26McasTsid%3D20893&McasCSRF=6fd32968b320641de523d48d50ba1f20a7024c542260d1740c5e2d12eb3eb172     -->

@@ -1,0 +1,7 @@
+<aura:component>
+    <lightning:card title="This component form VS Code" iconName="standard:account">
+
+        <lightning:button variant="brand" label="Click Here"  onclick="{! c.handleClick }" />
+
+    </lightning:card>
+</aura:component>

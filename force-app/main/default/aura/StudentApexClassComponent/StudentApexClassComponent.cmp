@@ -1,0 +1,50 @@
+<aura:component controller="StudentApexClass" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" access="global" >
+	<aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+    <aura:attribute name="stdlist" type="Student__c" default="" />
+    
+    <lightning:button class="slds-align_absolute-center" variant="brand" label="Update" title="Base action" onclick="{! c.Updateaction }"/>
+    <table border="2">
+  <thead>
+        <tr>
+            <th> Id</th>
+            <th>Name</th>
+            <th>DOB</th>
+            <th> Email Id</th>
+            <th> Country</th>
+
+        </tr>
+        </thead>
+        <tbody>
+       <aura:iteration items="{!v.stdlist}" var="s">
+            <tr >
+
+                <td>{!s.Id}</td>
+                <td> <lightning:input name="input1" value="{!s.Name}" class="newcls"/></td>
+                <td>{!s.DOB__c}</td> 
+                <td>{!s.Email_Id__c}</td>
+                <td>{!s.Country__c}</td>
+           
+            </tr>
+</aura:iteration> 
+
+
+
+      
+         </tbody>
+        
+        
+        
+        
+    </table>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  
+</aura:component>
