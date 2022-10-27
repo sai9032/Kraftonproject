@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Send_Email_Alert</fullName>
+        <ccEmails>saicharan9032@gmail.com</ccEmails>
+        <ccEmails>uday.sfdc1991@gmail.com</ccEmails>
+        <description>Send Email Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Manager_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/MarketingProductInquiryResponse</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Finally_Approved</fullName>
+        <field>Approval_Status__c</field>
+        <literalValue>Finally Approved</literalValue>
+        <name>Finally Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Finally_Reject</fullName>
+        <field>Approval_Status__c</field>
+        <literalValue>Finally Rejected</literalValue>
+        <name>Finally Reject</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Initial_Submit</fullName>
+        <field>Approval_Status__c</field>
+        <literalValue>Submited Approval</literalValue>
+        <name>Initial Submit</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Territory_Manager_Approved</fullName>
+        <field>Approval_Status__c</field>
+        <literalValue>Territory Manager Approved</literalValue>
+        <name>Territory Manager Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Zonal_Manager_Approved</fullName>
+        <field>Approval_Status__c</field>
+        <literalValue>Zonal Manager Approced</literalValue>
+        <name>Zonal Manager Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Send Email</fullName>
+        <actions>
+            <name>Send_Email_Alert</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Student__c.Name</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+</Workflow>
