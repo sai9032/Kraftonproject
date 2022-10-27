@@ -57,6 +57,9 @@
                     <th scope="col">
                         <div class="slds-truncate" title="Type">Type</div>
                     </th>
+                      <th scope="col">
+                        <div class="slds-truncate" title="Emailid">Emailid</div>
+                    </th>
                     <th scope="col">
                         <div class="slds-truncate" title="Industry">Industry</div>
                     </th>
@@ -93,6 +96,9 @@
                         </td>
                         <td>
                             <div class="slds-truncate">{!acc.Type}</div>
+                        </td>
+                             <td>
+                            <div class="slds-truncate">{!acc.Email_Id__c}</div>
                         </td>
                         <td>
                             <div class="slds-truncate">{!acc.Industry}</div>
