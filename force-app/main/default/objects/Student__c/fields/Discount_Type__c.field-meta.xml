@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Discount_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Discount Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Poor</fullName>
+                <default>false</default>
+                <label>Poor</label>
+            </value>
+            <value>
+                <fullName>Qualified Text</fullName>
+                <default>false</default>
+                <label>Qualified Text</label>
+            </value>
+            <value>
+                <fullName>Poor and Qualified</fullName>
+                <default>false</default>
+                <label>Poor and Qualified</label>
+            </value>
+            <value>
+                <fullName>Pandemic Offer</fullName>
+                <default>false</default>
+                <label>Pandemic Offer</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

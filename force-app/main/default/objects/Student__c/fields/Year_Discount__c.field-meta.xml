@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Year_Discount__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( Text(Discount_Type__c) == &apos;Poor&apos;,50/100,
+   
+ IF( Text(Discount_Type__c) == &apos;Qualified Text&apos;,100/100,
+
+ IF(
+     OR(Text(Discount_Type__c) == &apos;Poor and Qualified&apos;,Text(Discount_Type__c) == &apos;Pandemic Offer&apos;),30/100,0) 
+
+)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Year Discount</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Percent</type>
+</CustomField>

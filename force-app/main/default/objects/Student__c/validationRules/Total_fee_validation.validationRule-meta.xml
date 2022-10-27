@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_fee_validation</fullName>
+    <active>false</active>
+    <errorConditionFormula>IF( AND( course__r.Name==&apos;HTML&apos; ,Total_Fee__c != 25000), true, false)</errorConditionFormula>
+    <errorDisplayField>Total_Fee__c</errorDisplayField>
+    <errorMessage>for HTML the fee should be  25000</errorMessage>
+</ValidationRule>
