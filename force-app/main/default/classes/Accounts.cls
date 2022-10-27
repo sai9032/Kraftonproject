@@ -1,6 +1,6 @@
 public class Accounts {
     //Varaiable aDeclaration
-    Public String accountnumber='CD656092';
+ //*   Public String accountnumber='CD656092';
     Public String type='Prospect';
     Public String industry='Agriculture';
     Public Decimal annualrevenue=350000000;
@@ -17,12 +17,12 @@ public class Accounts {
     Public String siccode='546732';
     Public String sla='Silver';
     Public String slaserialumber='5379';
-    Public String upsellopportunity='Maybe';
+  //*  Public String upsellopportunity='Maybe';
     
     Public Accounts(){
         //constructor (variable declaration)
-        String accountnumber='OD1025400';
-        system.debug('Account Number=='+ accountnumber);
+   //*     String accountnumber='OD1025400';
+   //*     system.debug('Account Number=='+ accountnumber);
         
         system.debug('Type=='+Type); 
         Type='cons';
@@ -51,8 +51,6 @@ public class Accounts {
         system.debug('Rating=='+rating);
         rating='Five';
         system.debug('Rating=='+rating);
-        
-        
-        
+       
     }
 }
