@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>is_fee_paid</fullName>
+    <active>false</active>
+    <errorConditionFormula>IF( is_fee_paid__c == true,false, true)</errorConditionFormula>
+    <errorMessage>ss</errorMessage>
+</ValidationRule>

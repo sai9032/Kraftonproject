@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Approval_Status__c</fullName>
+    <externalId>false</externalId>
+    <label>Approval Status</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Territory Manager Approved</fullName>
+                <default>false</default>
+                <label>Territory Manager Approved</label>
+            </value>
+            <value>
+                <fullName>Zonal Manager Approced</fullName>
+                <default>false</default>
+                <label>Zonal Manager Approced</label>
+            </value>
+            <value>
+                <fullName>Submited Approval</fullName>
+                <default>false</default>
+                <label>Submited Approval</label>
+            </value>
+            <value>
+                <fullName>Finally Approved</fullName>
+                <default>false</default>
+                <label>Finally Approved</label>
+            </value>
+            <value>
+                <fullName>Finally Rejected</fullName>
+                <default>false</default>
+                <label>Finally Rejected</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>
